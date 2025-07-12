@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 /* RESET & BASE */
 * {
   margin: 0;
@@ -10,7 +11,7 @@ html {
 }
 
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Roboto', sans-serif;
   line-height: 1.6;
   color: #333;
   background-color: #fff;
@@ -24,7 +25,7 @@ body {
 }
 
 .btn {
-  background-color: #F3BA00;
+  background-color: #f3ba00;
   color: white;
   border: none;
   padding: 0.8rem 1.5rem;
@@ -40,9 +41,13 @@ body {
 
 /* HEADER */
 .site-header {
-  background-color: #1AC073;
+  background-color: #1ac073;
   padding: 1.5rem 0;
   color: #fff;
+}
+
+.site-header h1 {
+  letter-spacing: -1.2px;
 }
 
 .site-header .container {
@@ -54,18 +59,48 @@ body {
 .site-header nav ul {
   list-style: none;
   display: flex;
+  justify-content: center;
+  align-items: center;
   gap: 2rem;
 }
 
 .site-header nav a {
   color: #fff;
   text-decoration: none;
-  font-weight: 600;
+  font-weight: normal;
+}
+
+.icon-group {
+  display: flex;
+  gap: 2rem;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.shopping-icon {
+  position: relative;
+  display: inline-block;
+}
+
+.count {
+  position: absolute;
+  top: 2px;
+  right: -2px;
+  background-color: #f3ba00;
+  color: black;
+  font-size: 12px;
+  font-weight: bold;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* HERO SECTION */
 .hero {
-  background-color: #1AC073;
+  background-color: #1ac073;
   color: white;
   padding: 4rem 0;
 }
@@ -94,28 +129,33 @@ body {
 
 .search-bar {
   display: flex;
-  max-width: 500px;
+  max-width: 398px;
   background-color: white;
   border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
 }
 
 .search-bar input {
   flex: 1;
-  padding: 0.8rem;
+  padding: 1rem;
   border: none;
   outline: none;
   font-size: 1rem;
+  width: 398px;
+  height: 58px;
 }
 
 .search-bar button {
-  background-color: #F3BA00;
+  background-color: #f3ba00;
   color: white;
   border: none;
   padding: 0 1.5rem;
+  width: 112px;
+  height: 58px;
+  font-size: 16px;
   cursor: pointer;
-  font-weight: bold;
+  font-weight: normal;
 }
 
 .hero-image {
@@ -131,15 +171,15 @@ body {
 /* HOME KITCHEN SECTION */
 .home-kitchen {
   padding: 4rem 1rem;
-  background-color: #F2F2F2;
+  background-color: #f2f2f2;
 }
 
 .home-kitchen h2 {
-  font-size: 2rem;
-  font-weight: 700;
+  font-size: 2.5rem;
+  font-weight: bolder;
   margin-bottom: 2rem;
-  color: #222;
-  text-align: center;
+  color: #000000;
+  text-align: start;
 }
 
 .food-grid {
@@ -162,7 +202,7 @@ body {
 
 .food-card img {
   width: 100%;
-  height: 180px;
+  height: 11.25rem;
   object-fit: cover;
 }
 
@@ -193,13 +233,15 @@ body {
 .request-btn {
   display: block;
   margin: 2rem auto 0;
-  background-color: #1AC073;
+  background-color: #1ac073;
   color: white;
   padding: 0.8rem 1.8rem;
   font-weight: bold;
-  border-radius: 5px;
+  border-radius: 10px;
   border: none;
   cursor: pointer;
+  width: 210px;
+  height: 48px;
 }
 
 /* CAROUSEL SECTION */
@@ -209,12 +251,20 @@ body {
   text-align: center;
 }
 
+.carousel.popular-items h2 {
+  font: bolder;
+  color: #000000;
+  font-size: 2.5rem;
+}
+
 .carousel-container {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
   position: relative;
+  max-width: 100%;
+  overflow: hidden;
 }
 
 .carousel-track {
@@ -223,7 +273,7 @@ body {
   overflow-x: auto;
   scroll-behavior: smooth;
   padding: 20px 0;
-  scrollbar-width: none; /* Hide scrollbar for Firefox */
+  scrollbar-width: none; 
 }
 
 .carousel-track::-webkit-scrollbar {
@@ -241,15 +291,24 @@ body {
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
+.carousel-card.card-2 {
+  box-shadow: 0 8px 16px 2px rgba(0, 0, 0, 0.1);
+}
+
 .carousel-card:hover {
   transform: scale(1.03);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 10px rgba(0, 0, 0, 0.1);
 }
 
 .carousel-card img {
   width: 100%;
   height: 160px;
   object-fit: cover;
+}
+
+.carousel-wrapper {
+  overflow: hidden;
+  width: 750px; /* or 80vw or whatever suits your layout */
 }
 
 .food-info {
@@ -322,30 +381,35 @@ body {
 
 .discount-badge {
   position: absolute;
-  top: 10px;
-  left: 10px;
-  background: orange;
-  color: white;
+  top: 0px;
+  left: 0px;
+  background: #f3ba00;
   font-size: 12px;
   padding: 4px 8px;
   border-radius: 6px;
 }
 
 .discount-badge.yellow {
-  background: #ffd700;
+  background: #f3ba00;
   color: black;
 }
 
 .carousel-arrow {
-  background-color: #148d56;
+  background-color: #1ac073;
   border: none;
   color: white;
   border-radius: 50%;
-  width: 44px;
-  height: 44px;
+  width: 71.5px;
+  height: 71.5px;
   font-size: 24px;
   cursor: pointer;
   z-index: 1;
+}
+
+.carousel-arrow.left {
+  border: 3px solid #1ac073;
+  background-color: transparent;
+  color: #1ac073;
 }
 
 /* MODAL */
@@ -374,7 +438,7 @@ body {
 
 .modal-content h2 {
   margin-bottom: 1rem;
-  color: #1AC073;
+  color: #1ac073;
 }
 
 .modal-content input,
@@ -404,7 +468,7 @@ body {
 }
 
 #submitRequest {
-  background-color: #1AC073;
+  background-color: #1ac073;
   color: white;
 }
 
@@ -426,8 +490,9 @@ body {
 .video-cta h2 {
   font-size: 2rem;
   font-weight: 700;
-  color: #1d1e4b;
+  color: #252b42;
   margin-bottom: 10px;
+  line-height: 3rem;
 }
 
 .video-cta p {
@@ -450,14 +515,15 @@ body {
   display: block;
 }
 
-.play-button, .pause-button {
+.play-button,
+.pause-button {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 60px;
   height: 60px;
-  background: #1AC073;
+  background: #1ac073;
   border: none;
   border-radius: 50%;
   cursor: pointer;
@@ -467,14 +533,15 @@ body {
   transition: all 0.3s ease;
 }
 
-.play-button:hover, .pause-button:hover {
+.play-button:hover,
+.pause-button:hover {
   transform: translate(-50%, -50%) scale(1.1);
 }
 
 /* CONTACT SECTION */
 .contact-form {
   padding: 4rem 1rem;
-  background-color: #fff;
+  background-color: #f7f8fa;
 }
 
 .contact-form .container {
@@ -489,35 +556,66 @@ body {
 }
 
 .contact-left h2 {
-  font-size: 2rem;
-  font-weight: 700;
+  font-size: 24px;
+  font-weight: normal;
   margin-bottom: 1rem;
-  color: #1AC073;
+  color: #000000;
+  line-height: 1;
+}
+
+.contact-left p {
+  font-size: 1rem;
+  font-weight: normal;
+  margin-bottom: 1rem;
+  color: #000000;
+  line-height: 1;
 }
 
 .contact-left form {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
+  margin-top: 2rem;
 }
 
-.contact-left input,
-.contact-left textarea {
-  padding: 0.75rem 1rem;
-  border: 1px solid #ccc;
-  border-radius: 6px;
+.contact-left form input[type='text'],
+.contact-left form input[type='email'] {
+  padding: 12px 16px;
   font-size: 1rem;
-  font-family: 'Open Sans', sans-serif;
-  resize: none;
+  border-radius: 10px;
+  border: none;
+  width: 300px;
+  height: 58px;
+  box-sizing: border-box;
 }
 
-.contact-left button {
-  background-color: #1AC073;
-  color: white;
-  padding: 0.8rem 1.5rem;
+.contact-left form textarea {
+  grid-column: span 2;
+  padding: 12px 16px;
+  font-size: 1rem;
+  border-radius: 10px;
   border: none;
-  border-radius: 5px;
-  font-weight: bold;
+  resize: vertical;
+  width: 617px;
+  height: 164px;
+  box-sizing: border-box;
+}
+
+/* Make textarea span both columns */
+.contact-left form textarea {
+  grid-column: span 2;
+}
+
+.contact-left form button {
+  margin-top: 12px;
+  grid-column: span 2;
+  background-color: #1ac073; /* green color */
+  color: white;
+  font-size: 1rem;
+  width: 219px;
+  height: 58px;
+  border: none;
+  border-radius: 10px;
   cursor: pointer;
 }
 
@@ -533,29 +631,39 @@ body {
 
 /* FOOTER */
 .site-footer {
-  background-color: #1AC073;
+  background-color: #1ac073;
   color: white;
-  padding: 2.5rem 1rem;
+  padding: 2.5rem 1rem 1.5rem;
 }
 
-.site-footer .container {
+.footer-top {
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  gap: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.5rem;
+  font-family: 'Poppins', sans-serif;
 }
 
 .footer-nav ul {
   list-style: none;
   display: flex;
-  gap: 1.5rem;
+  gap: 2rem;
+  padding: 0;
+  margin: 0;
 }
 
 .footer-nav a {
   color: white;
   text-decoration: none;
-  font-weight: 500;
+  font-weight: normal;
   transition: color 0.3s;
 }
 
@@ -572,6 +680,9 @@ body {
   width: 28px;
   height: 28px;
   cursor: pointer;
+  background: white;
+  border-radius: 5px;
+  padding: 4px;
   transition: opacity 0.3s;
 }
 
@@ -579,9 +690,15 @@ body {
   opacity: 0.8;
 }
 
+.footer-divider {
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.4);
+  margin: 1.5rem auto 0;
+  max-width: 1200px;
+}
+
 .footer-copy {
   text-align: center;
-  padding-top: 1.5rem;
+  padding-top: 1rem;
   font-size: 0.9rem;
-  width: 100%;
 }
