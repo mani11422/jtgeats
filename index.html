@@ -275,75 +275,7 @@
 </div>ss
 </section>
 
-    <section class="carousel popular-items">
-    <!-- slider with arrows and food cards -->
-      <h2>Popular Items</h2>
-  <div class="carousel-container">
-    <button class="carousel-arrow left">&#8592;</button>
-    <div class="carousel-track" id="carouselTrack">
-      <div class="carousel-card">
-        <img src="assets/images/homemade_pizza.png" alt="Home made pizza" />
-        <div class="food-info">
-          <h3>Home made pizza</h3>
-          <div class="food-meta">
-            <span>₹190</span>
-            <span>⭐ 4.7</span>
-            <span>⏱ 50 min</span>
-          </div>
-        </div>
-      </div>
-      <div class="carousel-card">
-        <img src="assets/images/Pepperoni .png" alt="Tandoori Chicken" />
-        <div class="food-info">
-          <h3>Tandoori Chicken</h3>
-          <div class="food-meta">
-            <span>₹184</span>
-            <span>⭐ 4.4</span>
-            <span>⏱ 15 min</span>
-          </div>
-        </div>
-      </div>
-      <div class="carousel-card">
-        <img src="assets/images/Margherita.png" alt="Chili Chicken" />
-        <div class="food-info">
-          <h3>Chili Chicken</h3>
-          <div class="food-meta">
-            <span>₹116</span>
-            <span>⭐ 4.1</span>
-            <span>⏱ 30 min</span>
-          </div>
-        </div>
-      </div>
-      <div class="carousel-card">
-        <img src="assets/images/food3.jpg" alt="Spicy Pizza" />
-        <div class="food-info">
-          <h3>Spicy Pizza</h3>
-          <div class="food-meta">
-            <span>₹199</span>
-            <span>⭐ 4.5</span>
-            <span>⏱ 42 min</span>
-          </div>
-        </div>
-      </div>
-    </div>
-    <button class="carousel-arrow right">&#8594;</button>
-  </div>
-  <button class="request-btn">Request a Dish</button>
-  <div class="modal" id="requestModal">
-  <div class="modal-content">
-    <span class="close-btn" id="closeModal">&times;</span>
-    <h2>Request a Dish</h2>
-    <input type="text" placeholder="Your Name" />
-    <input type="email" placeholder="Your Email" />
-    <textarea rows="4" placeholder="What dish do you want?"></textarea>
-    <div class="modal-actions">
-      <button id="cancelRequest">Cancel</button>
-      <button id="submitRequest">Submit Request</button>
-    </div>
-  </div>
-</div>
-
-  </section>
+    
 
   <script>
   const track = document.getElementById("carouselTrack");
@@ -384,42 +316,6 @@
       </div>
     </div>
     
-    <style>
-      .video-preview {
-        position: relative;
-        width: 100%;
-        max-width: 800px;
-        margin: 0 auto;
-      }
-      
-      .video-thumbnail {
-        width: 100%;
-        border-radius: 8px;
-        display: block;
-      }
-      
-      .play-button, .pause-button {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 60px;
-        height: 60px;
-        background: rgba(255, 0, 0, 0.8);
-        border: none;
-        border-radius: 50%;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: all 0.3s ease;
-      }
-      
-      .play-button:hover, .pause-button:hover {
-        background: rgba(255, 0, 0, 1);
-        transform: translate(-50%, -50%) scale(1.1);
-      }
-    </style>
     
     <script>
       document.addEventListener('DOMContentLoaded', function() {

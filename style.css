@@ -766,5 +766,39 @@ body {
   cursor: pointer;
 }
 
+.video-preview {
+        position: relative;
+        width: 100%;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+      
+      .video-thumbnail {
+        width: 100%;
+        border-radius: 8px;
+        display: block;
+      }
+      
+      .play-button, .pause-button {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 60px;
+        height: 60px;
+        background: #1AC073;
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+      }
+      
+      .play-button:hover, .pause-button:hover {
+        background:#1AC073;
+        transform: translate(-50%, -50%) scale(1.1);
+      }
 
 
