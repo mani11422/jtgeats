@@ -1,63 +1,131 @@
-const track = document.getElementById('carouselTrack');
-const leftBtn = document.querySelector('.carousel-arrow.left');
-const rightBtn = document.querySelector('.carousel-arrow.right');
+// Carousel functionality
+const carouselTrack = document.getElementById("carouselTrack");
+const prevBtn = document.getElementById("prevBtn");
+const nextBtn = document.getElementById("nextBtn");
 
-let currentSlide = 0;
-const cardWidth = 300; // includes gap
-const maxSlide = track.children.length - 1;
-
-leftBtn.addEventListener('click', () => {
-  if (currentSlide > 0) {
-    currentSlide--;
-    track.style.transform = `translateX(-${cardWidth * currentSlide}px)`;
-  }
+prevBtn.addEventListener("click", () => {
+  carouselTrack.scrollBy({ left: -300, behavior: "smooth" });
 });
 
-rightBtn.addEventListener('click', () => {
-  if (currentSlide < maxSlide) {
-    currentSlide++;
-    track.style.transform = `translateX(-${cardWidth * currentSlide}px)`;
-  }
+nextBtn.addEventListener("click", () => {
+  carouselTrack.scrollBy({ left: 300, behavior: "smooth" });
 });
 
-// Optional: auto-slide every 5s
-setInterval(() => {
-  currentSlide = (currentSlide + 1) % (maxSlide + 1);
-  track.style.transform = `translateX(-${cardWidth * currentSlide}px)`;
+// Auto-scroll carousel every 5 seconds
+let carouselInterval = setInterval(() => {
+  carouselTrack.scrollBy({ left: 300, behavior: "smooth" });
+  
+  // Reset to first item if at end
+  if (carouselTrack.scrollLeft + carouselTrack.clientWidth >= carouselTrack.scrollWidth - 50) {
+    setTimeout(() => {
+      carouselTrack.scrollTo({ left: 0, behavior: "smooth" });
+    }, 1000);
+  }
 }, 5000);
 
-
-const modal = document.getElementById("requestModal");
-const openBtn = document.querySelector(".request-btn");
-const closeBtn = document.getElementById("closeModal");
-const cancelBtn = document.getElementById("cancelRequest");
-const submitBtn = document.getElementById("submitRequest");
-
-const openModal = () => {
-  modal.classList.add("open");
-  document.body.style.overflow = "hidden";
-};
-
-const closeModal = () => {
-  modal.classList.remove("open");
-  document.body.style.overflow = "auto";
-};
-
-openBtn.addEventListener("click", openModal);
-closeBtn.addEventListener("click", closeModal);
-cancelBtn.addEventListener("click", closeModal);
-submitBtn.addEventListener("click", closeModal);
-
-
-const playArrow = document.getElementById('playArrow');
-const pauseBtn = document.getElementById('pauseBtn');
-
-playArrow.addEventListener('click', () => {
-  playArrow.style.display = 'none';
-  pauseBtn.style.display = 'inline-block';
+// Pause auto-scroll on hover
+carouselTrack.addEventListener("mouseenter", () => {
+  clearInterval(carouselInterval);
 });
 
-pauseBtn.addEventListener('click', () => {
-  pauseBtn.style.display = 'none';
-  playArrow.style.display = 'inline-block';
+carouselTrack.addEventListener("mouseleave", () => {
+  carouselInterval = setInterval(() => {
+    carouselTrack.scrollBy({ left: 300, behavior: "smooth" });
+    
+    // Reset to first item if at end
+    if (carouselTrack.scrollLeft + carouselTrack.clientWidth >= carouselTrack.scrollWidth - 50) {
+      setTimeout(() => {
+        carouselTrack.scrollTo({ left: 0, behavior: "smooth" });
+      }, 1000);
+    }
+  }, 5000);
+});
+
+// Request Dish Modal functionality
+const requestModal = document.getElementById("requestModal");
+const requestBtn = document.querySelector(".request-btn");
+const closeModalBtn = document.getElementById("closeModal");
+const cancelRequestBtn = document.getElementById("cancelRequest");
+const submitRequestBtn = document.getElementById("submitRequest");
+
+function openModal() {
+  requestModal.style.display = "block";
+  document.body.style.overflow = "hidden";
+}
+
+function closeModal() {
+  requestModal.style.display = "none";
+  document.body.style.overflow = "auto";
+}
+
+requestBtn.addEventListener("click", openModal);
+closeModalBtn.addEventListener("click", closeModal);
+cancelRequestBtn.addEventListener("click", closeModal);
+
+submitRequestBtn.addEventListener("click", function() {
+  // Here you would typically collect form data and send it
+  alert("Your request has been submitted!");
+  closeModal();
+});
+
+// Close modal when clicking outside the content
+requestModal.addEventListener("click", function(e) {
+  if (e.target === requestModal) {
+    closeModal();
+  }
+});
+
+// Video Play/Pause functionality
+const playBtn = document.getElementById("playBtn");
+const pauseBtn = document.getElementById("pauseBtn");
+
+playBtn.addEventListener("click", function() {
+  playBtn.style.display = "none";
+  pauseBtn.style.display = "flex";
+  // Here you would typically play the video
+  console.log("Video playing...");
+});
+
+pauseBtn.addEventListener("click", function() {
+  pauseBtn.style.display = "none";
+  playBtn.style.display = "flex";
+  // Here you would typically pause the video
+  console.log("Video paused...");
+});
+
+// Quantity controls for food items
+document.querySelectorAll(".qty-btn").forEach(button => {
+  button.addEventListener("click", function() {
+    const qtyControl = this.parentElement;
+    const qtyNum = qtyControl.querySelector(".qty-num");
+    let quantity = parseInt(qtyNum.textContent);
+    
+    if (this.classList.contains("add")) {
+      quantity++;
+    } else {
+      quantity = Math.max(1, quantity - 1);
+    }
+    
+    qtyNum.textContent = quantity;
+  });
+});
+
+// Add to cart functionality for food items
+document.querySelectorAll(".add-btn").forEach(button => {
+  button.addEventListener("click", function() {
+    const foodCard = this.closest(".carousel-card");
+    const foodName = foodCard.querySelector("h3").textContent;
+    const foodPrice = foodCard.querySelector(".price").textContent;
+    
+    // Here you would typically add to cart
+    alert(`Added ${foodName} (${foodPrice}) to your cart!`);
+    
+    // Visual feedback
+    this.textContent = "✓ Added";
+    this.style.backgroundColor = "#4CAF50";
+    setTimeout(() => {
+      this.textContent = "+";
+      this.style.backgroundColor = "";
+    }, 2000);
+  });
 });
