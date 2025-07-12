@@ -196,74 +196,7 @@ body {
   gap: 0.3rem;
 }
 
-/* POPULAR ITEMS SECTION */
-.popular-items {
-  padding: 4rem 1rem;
-  background-color: #fff;
-  text-align: center;
-}
 
-.popular-items h2 {
-  font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: 2rem;
-}
-
-.carousel-container {
-  position: relative;
-  overflow: hidden;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.carousel-track {
-  display: flex;
-  transition: transform 0.5s ease;
-  gap: 2rem;
-}
-
-.carousel-card {
-  min-width: 280px;
-  background: #fff;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-  flex-shrink: 0;
-  text-align: left;
-}
-
-.carousel-card img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-}
-
-.carousel-card .food-info {
-  padding: 1rem;
-}
-
-.carousel-arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: #1AC073;
-  color: white;
-  border: none;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  font-size: 1.5rem;
-  cursor: pointer;
-  z-index: 2;
-}
-
-.carousel-arrow.left {
-  left: -20px;
-}
-
-.carousel-arrow.right {
-  right: -20px;
-}
 
 .request-btn {
   margin-top: 2rem;
@@ -447,10 +380,7 @@ body {
   font-size: 0.9rem;
 }
 
-/* Arrow Hover */
-.carousel-arrow:hover {
-  background-color: #148d56;
-}
+
 
 /* Middle card hover state */
 .carousel-card:hover {
@@ -545,3 +475,296 @@ body {
 .video-preview.paused .play-icon {
   display: block;
 }
+
+.video-cta {
+  background: linear-gradient(180deg, #ffffff 50%, #d1f5d4 50%);
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.video-cta h2 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #1d1e4b;
+  margin-bottom: 10px;
+}
+
+.video-cta p {
+  color: #666;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.video-preview {
+  position: relative;
+  margin-top: 40px;
+  display: inline-block;
+}
+
+.video-preview img.video-thumbnail {
+  border-radius: 8px;
+  max-width: 100%;
+}
+
+.video-preview img.play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 108px;
+  height: 108px;
+  border-radius: 50%;
+  padding: 16px;
+}
+
+
+
+ .pause-button {
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg, #01AFE2, #006B99);
+      border: none;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      transition: transform 0.2s;
+    }
+
+    .pause-button:hover {
+      transform: scale(1.1);
+    }
+
+    .pause-icon {
+      display: flex;
+      gap: 4px;
+    }
+
+    .pause-icon div {
+      width: 6px;
+      height: 24px;
+      background-color: white;
+      border-radius: 2px;
+    }
+
+    .video-preview {
+  position: relative;
+  display: inline-block;
+}
+
+.video-thumbnail {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+}
+
+.pause-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #01AFE2, #006B99);
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s;
+}
+
+
+.pause-icon {
+  display: flex;
+  gap: 4px;
+}
+
+.pause-icon div {
+  width: 6px;
+  height: 24px;
+  background-color: white;
+  border-radius: 2px;
+}
+
+.video-preview {
+  position: relative;
+}
+
+.play-button {
+  cursor: pointer;
+}
+
+.pause-button {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.pause-icon {
+  display: flex;
+  gap: 5px;
+  width: 20px;
+  height: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.pause-icon div {
+  width: 4px;
+  height: 20px;
+  background-color: black;
+}
+
+
+.carousel.popular-items {
+  font-family: 'Arial', sans-serif;
+  padding: 40px 20px;
+  background: #f8f9fa;
+  text-align: center;
+}
+
+.carousel-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  position: relative;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 20px 0;
+}
+
+.carousel-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.06);
+  width: 250px;
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel-card img {
+  width: 100%;
+  border-radius: 12px 12px 0 0;
+}
+
+.food-info {
+  padding: 12px;
+  text-align: left;
+}
+
+.food-info h3 {
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.bottom-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+}
+
+.price {
+  font-weight: bold;
+}
+
+.rating {
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.time {
+  font-size: 11px;
+  color: #555;
+}
+
+.qty-control {
+  display: flex;
+  align-items: center;
+  background: #ffcc00;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.qty-btn {
+  background: transparent;
+  border: none;
+  padding: 4px 8px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.qty-num {
+  padding: 0 6px;
+  font-size: 14px;
+}
+
+.add-btn {
+  background: #ffcc00;
+  border: none;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 28px;
+  text-align: center;
+}
+
+.discount-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: orange;
+  color: white;
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+
+.discount-badge.yellow {
+  background: #ffd700;
+  color: black;
+}
+
+.carousel-arrow {
+  background-color: #148d56;
+  border: none;
+  color: white;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+
+

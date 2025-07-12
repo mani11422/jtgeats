@@ -49,24 +49,15 @@ cancelBtn.addEventListener("click", closeModal);
 submitBtn.addEventListener("click", closeModal);
 
 
-const video = document.getElementById('foodVideo');
-const playIcon = document.getElementById('playIcon');
-const videoContainer = document.querySelector('.video-preview');
+const playArrow = document.getElementById('playArrow');
+const pauseBtn = document.getElementById('pauseBtn');
 
-videoContainer.addEventListener('click', () => {
-  if (video.paused) {
-    video.play();
-    videoContainer.classList.remove('paused');
-  } else {
-    video.pause();
-    videoContainer.classList.add('paused');
-  }
+playArrow.addEventListener('click', () => {
+  playArrow.style.display = 'none';
+  pauseBtn.style.display = 'inline-block';
 });
 
-video.addEventListener('pause', () => {
-  videoContainer.classList.add('paused');
-});
-
-video.addEventListener('play', () => {
-  videoContainer.classList.remove('paused');
+pauseBtn.addEventListener('click', () => {
+  pauseBtn.style.display = 'none';
+  playArrow.style.display = 'inline-block';
 });
